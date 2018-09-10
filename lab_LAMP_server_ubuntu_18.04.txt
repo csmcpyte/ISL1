@@ -1,0 +1,46 @@
+Laboratorio para la implementación de un servidor LAMP (Linux Apache2                                                                                                                                              
+MySQL PHP) en la distribución de GNU/linux, Ubuntu Server 18.04.                                                                                                                                                   
+                                                                                                                                                                                                                   
+El laboratorio se trabajará sobre una máquina virtual creada con                                                                                                                                                   
+virtualbox aunque los comandos utilizados aplican a cualquier tipo de                                                                                                                                              
+instalación (usb_live_image, DVD, instalación por red) o almacenamiento                                                                                                                                            
+(servidor físico, nube, máquina virtual)                                                                                                                                                                           
+                                                                                                                                                                                                                   
+                                                                                                                                                                                                                   
+Se utiliza el intérprete de comandos BASH                                                                                                                                                                          
+
+Un servidor  "LAMP" es un conjunto de un sistema operativo mas software
+adicional de código fuente abierto que permiten a dicho servidor alojar
+sitios web dinámicos y aplicaciones web.  Este término es en realidad
+un acrónimo que representa el sistema operativo GNU/Linux, el servidor
+web Apache, con los datos del sitio almacenados en una base de datos
+MySQL y PHP que procesa el contenido dinámico.(Javascript, llamada a
+bases de datos, etc)
+
+
+Comandos a ejecutar en la terminal
+
+Actalizacion de la lista de software disponible desde los repositorios
+~$sudo apt update
+
+Instalamos las actualizaciones 
+~$sudo apt upgrade
+
+Instalación de webserver 
+~$sudo apt install apache2 
+Instalacion de servidor de base de datos 
+~$sudo apt install mysql-server 
+establecemos un password de root de base de datos 
+ro0t.MySqL
+
+
+Instalamos php y las dependencias recomendadas para que php pueda
+interactuar con el webserver y la base de datos 
+~$sudo apt install php libapache2-mod-php php-mysql
+
+Con esto ya tenemos instalado un servidor lamp funcional pero que dista
+de ser seguro y no apto para producción. Mínimo se necesita establecer
+un firewall y reforzar la seguridad de apache y php para pensar en un
+entorno de producción.
+
+
