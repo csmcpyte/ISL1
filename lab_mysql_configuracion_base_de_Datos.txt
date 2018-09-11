@@ -1,0 +1,26 @@
+Laboratorio enfocado en la creación de una base de datos de uso general y
+la creación y asignación de permisos del usuario administrador de dicha base de
+datos.
+Se asume haber completado el laboratorio de configuración de un servidor LAMP.
+
+Una vez que accedemos al sistema ejecutamos los siguientes comandos en la 
+terminal.
+
+Para ingresar a la consola de mysql, la opcion -u indica el usuario y -p para 
+solicitar el password interactivamente.
+~$mysql -u root -p
+
+Crear base de datos y darle los permisos necesarios y suficientes para 
+garantizar la funcionalidad y seguridad óptimas
+
+Crear la base de datos
+mysql> create database nombrebasededatos;
+
+Dar los permisos
+
+mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,LOCK TABLES,
+CREATE TEMPORARY TABLES ON `nombrebasededatos`.* TO 'usuariobasededatos'@
+'localhost' IDENTIFIED BY 'constraseñausuariobasededatos';
+
+Actualizar los permisos
+mysql> FLUSH PRIVILEGES;
